@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Hammerton — Data Analyst portfolio showcasing data analysis, Excel dashboards, statistical analysis and research reporting.">
+<title>Hammerton | Data Analyst Portfolio</title>
+<style>
+:root{--navy:#10243a;--blue:#2563eb;--cyan:#38bdf8;--ink:#172334;--muted:#607086;--paper:#f5f8fc;--line:#e2e8f0;--white:#fff;--green:#16856b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:850;font-size:1.25rem;letter-spacing:.02em;color:var(--navy)}.brand span{color:var(--blue)}
+nav{display:flex;gap:25px;align-items:center;font-size:.92rem;color:#415269}nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:9px;background:var(--blue);color:white;font-weight:700;border:1px solid var(--blue);transition:.2s}.btn:hover{background:#1d4ed8;transform:translateY(-1px)}.btn.outline{background:transparent;color:var(--navy);border-color:#b8c6d8}.btn.outline:hover{background:white}
+.hero{background:linear-gradient(120deg,#10243a 0%,#163d63 65%,#155e75 100%);color:white;padding:92px 0 82px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff22;border-radius:50%;right:-80px;top:-160px;box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff05}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:center;position:relative;z-index:1}.eyebrow{color:#93dfff;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:800}.hero h1{font-size:clamp(2.7rem,6vw,4.8rem);line-height:1.06;margin:15px 0 18px;letter-spacing:-.045em}.hero h1 span{color:#7dd3fc}.hero p{max-width:650px;color:#d5e4f2;font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.hero .outline{color:white;border-color:#8aa8c2}.hero .outline:hover{color:var(--navy)}.hero-card{background:#ffffff12;border:1px solid #ffffff2a;border-radius:18px;padding:25px;backdrop-filter:blur(8px)}.hero-card .monogram{width:68px;height:68px;border-radius:18px;background:#7dd3fc;color:#10243a;display:grid;place-items:center;font-size:1.7rem;font-weight:900;margin-bottom:18px}.hero-card h3{margin:0 0 5px;font-size:1.25rem}.hero-card p{font-size:.92rem;margin:0;color:#d5e4f2}.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.tag{font-size:.78rem;border:1px solid #ffffff38;border-radius:99px;padding:5px 10px;color:#e7f5ff}
+section{padding:76px 0}.section-head{max-width:700px;margin-bottom:30px}.kicker{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.13em;font-size:.76rem}.section-head h2{font-size:clamp(1.9rem,4vw,2.65rem);letter-spacing:-.035em;line-height:1.15;margin:8px 0 12px;color:var(--navy)}.section-head p{color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:38px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:27px;box-shadow:0 8px 25px #18365308}.panel h3{margin:0 0 12px;color:var(--navy)}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fact{background:#f5f8fc;border-radius:11px;padding:15px}.fact strong{display:block;color:var(--navy);font-size:.95rem}.fact small{color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.skill{background:white;border:1px solid var(--line);border-radius:14px;padding:20px}.skill .ico{font-size:1.45rem}.skill h3{margin:9px 0 4px;font-size:1.05rem;color:var(--navy)}.skill p{margin:0;color:var(--muted);font-size:.9rem}
+.projects{background:#edf3f9}.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.project{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}.project-top{padding:24px 24px 15px;background:linear-gradient(135deg,#e9f4ff,#f7fbff);min-height:145px;position:relative}.project-no{font-size:.78rem;font-weight:800;color:var(--blue);letter-spacing:.1em}.project-top h3{font-size:1.28rem;line-height:1.25;color:var(--navy);margin:8px 0}.project-body{padding:21px 24px 24px;display:flex;flex-direction:column;flex:1}.project-body p{margin:0 0 13px;color:var(--muted);font-size:.94rem}.project-body ul{padding-left:19px;margin:0 0 17px;color:#405168;font-size:.9rem}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}.chip{font-size:.75rem;background:#eaf2ff;color:#2452a0;border-radius:99px;padding:5px 9px;font-weight:700}.note{margin-top:23px;border-left:3px solid var(--cyan);padding:12px 16px;background:#f7fbff;color:#52657a;font-size:.88rem}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{background:white;border:1px solid var(--line);border-radius:14px;padding:19px}.step b{display:block;color:var(--blue);font-size:.8rem;letter-spacing:.1em}.step h3{font-size:1rem;margin:7px 0;color:var(--navy)}.step p{font-size:.87rem;color:var(--muted);margin:0}
+.education{display:grid;grid-template-columns:1fr 1fr;gap:20px}.edu-card{background:white;border:1px solid var(--line);border-radius:14px;padding:23px}.edu-card h3{margin:0 0 5px;color:var(--navy)}.edu-card p{margin:0;color:var(--muted)}
+.contact{background:var(--navy);color:white}.contact .section-head h2{color:white}.contact .section-head p{color:#c7d6e5}.contact-box{display:flex;justify-content:space-between;align-items:center;gap:25px;background:#ffffff0d;border:1px solid #ffffff25;border-radius:16px;padding:25px}.contact-box p{margin:4px 0;color:#c7d6e5}.contact-box a.email{font-weight:750;color:#93dfff;overflow-wrap:anywhere}
+footer{padding:22px 0;background:#0b1b2b;color:#aabacc;font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:800px){nav{gap:13px;font-size:.82rem}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-card{max-width:440px}.skills{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.nav{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 0}.nav nav{order:3;width:100%;overflow:auto;padding-bottom:5px}.nav>.btn{margin-left:auto}.hero{padding:65px 0}.skills,.project-grid,.education,.facts{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}section{padding:58px 0}.contact-box{align-items:flex-start;flex-direction:column}}
+@media print{header{position:static}.hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}.btn{display:none}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#home">HAMMERTON<span>.</span></a>
+  <nav aria-label="Main navigation"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+  <a class="btn" href="mailto:machiohammertn41@gmail.com">Let's talk</a>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">Data Analyst · Kenya</div>
+    <h1>Making data<br><span>work smarter.</span></h1>
+    <p>I am Hammerton, a Mathematics and Computer Science graduate interested in turning raw data into clear insights through data cleaning, statistical analysis, visualization and reporting.</p>
+    <div class="hero-actions"><a class="btn" href="#projects">Explore my work</a><a class="btn outline" href="mailto:machiohammertn41@gmail.com">Contact me</a></div>
+  </div>
+  <aside class="hero-card">
+    <div class="monogram">H.</div>
+    <h3>Hammerton</h3><p>Entry-level Data Analyst</p>
+    <div class="hero-tags"><span class="tag">Excel</span><span class="tag">SPSS</span><span class="tag">R</span><span class="tag">MATLAB</span><span class="tag">Research</span></div>
+  </aside>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="section-head"><div class="kicker">About me</div><h2>Curious about data. Focused on useful answers.</h2><p>A quantitative foundation combined with a practical, careful approach to analysis.</p></div>
+  <div class="about-grid">
+    <div class="panel"><h3>Professional summary</h3><p>I have an academic background in Mathematics and Computer Science, with a strong interest in statistical reasoning, quantitative research and problem-solving. My areas of focus include preparing datasets, exploring patterns, applying appropriate statistical methods, and communicating findings in a clear and responsible way.</p><p>I am building a portfolio through academic and independent practice projects. I value accuracy, transparent methods and conclusions that are supported by the data.</p></div>
+    <div class="panel"><h3>At a glance</h3><div class="facts">
+      <div class="fact"><strong>Education</strong><small>Mathematics &amp; Computer Science</small></div>
+      <div class="fact"><strong>University</strong><small>Kibabii University</small></div>
+      <div class="fact"><strong>Academic award</strong><small>First Class Honours</small></div>
+      <div class="fact"><strong>Based in</strong><small>Kenya</small></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="section-head"><div class="kicker">Technical toolkit</div><h2>Skills I bring to a data project</h2><p>Tools and methods developed through academic work and continued independent practice.</p></div>
+  <div class="skills">
+    <article class="skill"><div class="ico">▦</div><h3>Microsoft Excel</h3><p>Data organization, cleaning, formulas, PivotTables, charts and dashboard development.</p></article>
+    <article class="skill"><div class="ico">▤</div><h3>SPSS</h3><p>Descriptive statistics, hypothesis testing, correlation, regression and interpretation.</p></article>
+    <article class="skill"><div class="ico">R</div><h3>R</h3><p>Statistical computing, data exploration and analytical visualization.</p></article>
+    <article class="skill"><div class="ico">∑</div><h3>MATLAB</h3><p>Mathematical computation, numerical methods and quantitative problem-solving.</p></article>
+    <article class="skill"><div class="ico">⌕</div><h3>Data preparation</h3><p>Checking missing values, consistency, data types, duplicates and data quality.</p></article>
+    <article class="skill"><div class="ico">▥</div><h3>Reporting &amp; visualization</h3><p>Charts, tables, concise reports and communicating analytical findings.</p></article>
+  </div>
+</div></section>
+
+<section class="projects" id="projects"><div class="wrap">
+  <div class="section-head"><div class="kicker">Selected portfolio projects</div><h2>Practical analysis work</h2><p>These are project outlines for demonstrating analytical workflow. Add the corresponding datasets, workbook screenshots and verified findings as each project is completed.</p></div>
+  <div class="project-grid">
+    <article class="project"><div class="project-top"><div class="project-no">PROJECT 01 · EXCEL</div><h3>Retail Sales Analysis &amp; Dashboard</h3></div><div class="project-body"><p><b>Objective:</b> Explore sales activity and present business performance in an accessible dashboard.</p><ul><li>Inspect, clean and structure transaction data.</li><li>Summarize sales by product, category and period.</li><li>Build PivotTables, charts and KPI summaries.</li><li>Write evidence-based observations and recommendations.</li></ul><div class="chips"><span class="chip">Excel</span><span class="chip">PivotTables</span><span class="chip">Dashboard</span><span class="chip">Data cleaning</span></div></div></article>
+    <article class="project"><div class="project-top"><div class="project-no">PROJECT 02 · STATISTICS</div><h3>Student Performance Analysis</h3></div><div class="project-body"><p><b>Objective:</b> Investigate how selected student characteristics and attendance patterns relate to academic results.</p><ul><li>Summarize performance and student characteristics.</li><li>Compare group means using appropriate t-tests.</li><li>Examine associations using correlation.</li><li>Fit and interpret regression models with stated assumptions.</li></ul><div class="chips"><span class="chip">SPSS</span><span class="chip">Excel</span><span class="chip">Hypothesis testing</span><span class="chip">Regression</span></div></div></article>
+    <article class="project"><div class="project-top"><div class="project-no">PROJECT 03 · RESEARCH</div><h3>Survey Data Cleaning &amp; Reporting</h3></div><div class="project-body"><p><b>Objective:</b> Prepare a survey dataset for reliable analysis and communicate its key descriptive findings.</p><ul><li>Review variable names, coding and data types.</li><li>Check missing, duplicate and inconsistent records.</li><li>Produce frequency tables and descriptive summaries.</li><li>Document cleaning decisions and reporting limitations.</li></ul><div class="chips"><span class="chip">Excel</span><span class="chip">SPSS</span><span class="chip">Data quality</span><span class="chip">Research reporting</span></div></div></article>
+    <article class="project"><div class="project-top"><div class="project-no">PROJECT 04 · QUANTITATIVE</div><h3>Exploratory Data Analysis</h3></div><div class="project-body"><p><b>Objective:</b> Use statistical summaries and visualizations to understand a numerical dataset before modelling.</p><ul><li>Calculate measures of centre and spread.</li><li>Visualize distributions and relationships.</li><li>Identify unusual values for further investigation.</li><li>Summarize patterns without overstating causation.</li></ul><div class="chips"><span class="chip">R</span><span class="chip">Excel</span><span class="chip">Statistics</span><span class="chip">Visualization</span></div></div></article>
+  </div>
+  <div class="note"><b>Portfolio integrity:</b> No client engagements, performance metrics, dashboard screenshots or project findings are claimed here. Project cards describe work to showcase; update each card with real outputs and verified results when available.</div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="section-head"><div class="kicker">My workflow</div><h2>From raw data to a clear report</h2><p>A structured process designed to keep analysis transparent and reproducible.</p></div>
+  <div class="process-grid">
+    <div class="step"><b>01 / UNDERSTAND</b><h3>Define the question</h3><p>Clarify the objective, variables, audience and expected deliverables.</p></div>
+    <div class="step"><b>02 / PREPARE</b><h3>Clean the data</h3><p>Check quality, correct formats and document preparation decisions.</p></div>
+    <div class="step"><b>03 / ANALYZE</b><h3>Explore &amp; test</h3><p>Apply suitable summaries, statistical methods and visualizations.</p></div>
+    <div class="step"><b>04 / COMMUNICATE</b><h3>Report insights</h3><p>Explain findings, limitations and practical next steps clearly.</p></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="section-head"><div class="kicker">Education</div><h2>Academic foundation</h2></div>
+  <div class="education">
+    <article class="edu-card"><h3>Bachelor's Degree in Mathematics and Computer Science</h3><p>Kibabii University</p><p><b>Academic achievement:</b> First Class Honours</p></article>
+    <article class="edu-card"><h3>Areas of academic strength</h3><p>Mathematical modelling, statistics, quantitative reasoning, computational methods and analytical problem-solving.</p></article>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div class="section-head"><div class="kicker">Get in touch</div><h2>Have a data challenge?</h2><p>I welcome opportunities to learn, collaborate and contribute to data-focused projects.</p></div>
+  <div class="contact-box"><div><strong>Hammerton</strong><p>Data Analyst · Kenya</p><a class="email" href="mailto:machiohammertn41@gmail.com">machiohammertn41@gmail.com</a></div><a class="btn" href="mailto:machiohammertn41@gmail.com?subject=Data%20Analysis%20Opportunity">Email me</a></div>
+</div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> Hammerton. Portfolio.</span><span>Built around accuracy, clarity and evidence.</span></div></footer>
+</body></html>
